@@ -17,5 +17,5 @@ use Illuminate\Support\Facades\Route;
     return view('welcome');
 }); */
 
-route::get('/','HomeConTroller@trangchu');
-route::get('trangchu','HomeConTroller@trangchu');
+route::get('/','SanphamConTroller@sanpham');
+route::get('trangchu','SanphamConTroller@sanpham');

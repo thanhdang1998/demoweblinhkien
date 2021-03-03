@@ -115,35 +115,32 @@
                 </div>
             </div>
         </div>
+        @php( 
+            $theloai = \App\Models\theloai::all() 
+        ) 
         <div class="nav-item">
             <div class="container">
                 <div class="nav-depart">
                     <div class="depart-btn">
                         <i class="fa fa-menu"></i>
-                        <span>All departments</span>
+                        <span>Loại sản phẩm</span>
                         <ul class="depart-hover">
-                            <li class="active"><a href="#">Women’s Clothing</a></li>
-                            <li><a href="#">Men’s Clothing</a></li>
-                            <li><a href="#">Underwear</a></li>
-                            <li><a href="#">Kid's Clothing</a></li>
-                            <li><a href="#">Brand Fashion</a></li>
-                            <li><a href="#">Accessories/Shoes</a></li>
-                            <li><a href="#">Luxury Brands</a></li>
-                            <li><a href="#">Brand Outdoor Apparel</a></li>
+                            @foreach($theloai as $t)
+                                <li><a href="#">{{$t->tentheloai}}</a></li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
                 <nav class="nav-menu mobile-menu">
                     <ul>
-                        <li class="active"><a href="./index.html">Home</a></li>
-                        <li><a href="./shop.html">Shop</a></li>
+                        <li class="active"><a href="./shop.html">Shop</a></li>
                         <li><a href="#">Collection</a>
                             <ul class="dropdown">
                                 <li><a href="#">Men's</a></li>
                                 <li><a href="#">Women's</a></li>
                                 <li><a href="#">Kid's</a></li>
                             </ul>
-                        </li>
+                        </li> 
                         <li><a href="./blog.html">Blog</a></li>
                         <li><a href="./contact.html">Contact</a></li>
                         <li><a href="#">Pages</a>
