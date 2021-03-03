@@ -1,0 +1,9 @@
+.ht-right .lan-selector .ddcommon .ddTitle .ddArrow:before {
+	font-family: "ElegantIcons";
+	font-size: 14px;
+	color: #636363;
+	float: right;
+	position: relative;
+	right: 0;
+	line-height: 26px;
+}
