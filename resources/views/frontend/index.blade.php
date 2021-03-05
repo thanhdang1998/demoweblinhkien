@@ -29,6 +29,7 @@
     @include('frontend.layout.header');
 
     @yield('noidung')
+    @yield('script')
 
     @include('frontend.layout.footer');
 

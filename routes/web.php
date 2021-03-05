@@ -19,3 +19,5 @@ use Illuminate\Support\Facades\Route;
 
 route::get('/','SanphamConTroller@sanpham');
 route::get('trangchu','SanphamConTroller@sanpham');
+route::get('thietbi','SanphamConTroller@sanpham');
+route::get('chitietthietbi/{id}','SanphamConTroller@chitietsanpham')->name('chitietthietbi');
