@@ -42,7 +42,7 @@
                     <div class="col-lg-2 col-md-2">
                         <div class="logo">
                             <a href="./index.html">
-                                <img src="public/img/logo.png" alt="">
+                                <img src="../public/img/logo.png" alt="">
                             </a>
                         </div>
                     </div>
@@ -66,50 +66,41 @@
                             <li class="cart-icon">
                                 <a href="#">
                                     <i class="fa fa-shopping-bag"></i>
-                                    <span>3</span>
+                                    <span>{{Cart::getContent()->count()}}</span>
                                 </a>
                                 <div class="cart-hover">
                                     <div class="select-items">
                                         <table>
                                             <tbody>
+                                            @php($content = Cart::getContent())
+                                            @foreach($content as $c)    
                                                 <tr>
-                                                    <td class="si-pic"><img src="public/img/select-product-1.jpg" alt=""></td>
+                                                    <td class="si-pic"><img src="{{asset($c->attributes->image)}}" height="70px" width="220px" alt=""></td>
                                                     <td class="si-text">
                                                         <div class="product-selected">
-                                                            <p>$60.00 x 1</p>
-                                                            <h6>Kabino Bedside Table</h6>
+                                                            <p>{{$c->price}} x {{$c->quantity}}</p>
+                                                            <h6>{{$c->name}}</h6>
                                                         </div>
                                                     </td>
                                                     <td class="si-close">
-                                                        <i class="fa fa-times"></i>
+                                                    <a href="{{route('xoasanpham',$c->id)}}"><i class="fa fa-times"></i></a>
                                                     </td>
                                                 </tr>
-                                                <tr>
-                                                    <td class="si-pic"><img src="public/img/select-product-2.jpg" alt=""></td>
-                                                    <td class="si-text">
-                                                        <div class="product-selected">
-                                                            <p>$60.00 x 1</p>
-                                                            <h6>Kabino Bedside Table</h6>
-                                                        </div>
-                                                    </td>
-                                                    <td class="si-close">
-                                                        <i class="fa fa-times"></i>
-                                                    </td>
-                                                </tr>
+                                            @endforeach
                                             </tbody>
                                         </table>
                                     </div>
                                     <div class="select-total">
                                         <span>total:</span>
-                                        <h5>$120.00</h5>
+                                        <h5>{{number_format(Cart::getSubtotal(),0)}} VND</h5>
                                     </div>
                                     <div class="select-button">
-                                        <a href="#" class="primary-btn view-card">VIEW CARD</a>
-                                        <a href="#" class="primary-btn checkout-btn">CHECK OUT</a>
+                                        <a href="{{URL('giohang')}}" class="primary-btn view-card">Giỏ hàng</a>
+                                        <a href="#" class="primary-btn checkout-btn">Thanh toán</a>
                                     </div>
                                 </div>
                             </li>
-                            <li class="cart-price">$150.00</li>
+                            <li class="cart-price">{{number_format(Cart::getSubtotal(),0)}} VND</li>
                         </ul>
                     </div>
                 </div>
@@ -133,9 +124,9 @@
                 </div>
                 <nav class="nav-menu mobile-menu">
                     <ul>
-                        <li class="active"><a href="{{URL::to('thietbi')}}">Thiết bị</a></li>
-                        <li><a href="./blog.html">Blog</a></li>
-                        <li><a href="./contact.html">Liên hệ</a></li>
+                        <li class="active"><a href="{{URL::to('/')}}">Thiết bị</a></li>
+                        <li><a href="{{URL('tintuc')}}">Tin tức công nghệ</a></li>
+                        <li><a href="{{URL('lienhe')}}">Liên hệ</a></li>
                         <li><a href="#">Pages</a>
                             <ul class="dropdown">
                                 <li><a href="./blog-details.html">Blog Details</a></li>

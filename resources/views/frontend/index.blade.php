@@ -23,6 +23,8 @@
     <link rel="stylesheet" href="{{asset('public/css/slicknav.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('public/css/style.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('public/css/style1.css')}}" type="text/css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
